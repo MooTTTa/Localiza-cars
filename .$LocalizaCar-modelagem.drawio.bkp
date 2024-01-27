@@ -1,0 +1,146 @@
+<mxfile host="Electron" modified="2024-01-20T20:15:11.686Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.21 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="YY2QpNIO42Nw3rhJnten" version="22.1.21" type="device">
+  <diagram name="Página-1" id="Nq_b2kSwqW-VByV66uWw">
+    <mxGraphModel dx="2312" dy="1515" grid="0" gridSize="18" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#60a917;strokeColor=#2D7600;" edge="1" parent="1" source="gGdMSuWWBeBKwDiAK09K-1" target="gGdMSuWWBeBKwDiAK09K-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="18" y="188" />
+              <mxPoint x="18" y="188" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-1" value="&lt;font color=&quot;#000000&quot;&gt;Cliente&lt;/font&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=default;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+          <mxGeometry x="-48" y="147" width="30" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0.1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.75;entryY=0.1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="gGdMSuWWBeBKwDiAK09K-1" target="gGdMSuWWBeBKwDiAK09K-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#008a00;strokeColor=#005700;" edge="1" parent="1" source="gGdMSuWWBeBKwDiAK09K-3" target="gGdMSuWWBeBKwDiAK09K-20">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="284" y="80" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="366" y="188" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.31;entryY=0.08;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#008a00;strokeColor=#005700;" edge="1" parent="1" source="gGdMSuWWBeBKwDiAK09K-19" target="gGdMSuWWBeBKwDiAK09K-24">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="377" y="188" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="328" y="188" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-3" value="&lt;font color=&quot;#000000&quot;&gt;site localiza&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#0000FF;" vertex="1" parent="1">
+          <mxGeometry x="96" y="158" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-11" value="Criar usuario ou logar no usuario" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
+          <mxGeometry x="225" y="138" width="80" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-18" value="&lt;font color=&quot;#000000&quot;&gt;Criar usuario/&lt;br&gt;Nome&lt;br&gt;email&lt;br&gt;idade&lt;br&gt;cpf&lt;br&gt;cidade&lt;br&gt;senha&lt;br&gt;&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="330.5" y="-74" width="90" height="127" as="geometry" />
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-20" value="Controller cadastrar usario" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="38" width="171" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#008a00;strokeColor=#005700;" edge="1" parent="1" source="gGdMSuWWBeBKwDiAK09K-21" target="gGdMSuWWBeBKwDiAK09K-24">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="572" y="322" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-21" value="DB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="558" y="225" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-22" value="" style="endArrow=classic;html=1;rounded=0;fillColor=#008a00;strokeColor=#005700;" edge="1" parent="1" target="gGdMSuWWBeBKwDiAK09K-21">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="444.9988125292192" y="49.996484338475916" as="sourcePoint" />
+            <mxPoint x="583.14" y="50.32" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="572" y="52" />
+              <mxPoint x="594" y="52" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#008a00;strokeColor=#005700;" edge="1" parent="1" source="gGdMSuWWBeBKwDiAK09K-24">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360.5000000000002" y="455.19047619047615" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-24" value="Controller loga usario" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="275" y="303" width="171" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=1;entryDx=0;entryDy=-15;entryPerimeter=0;fillColor=#008a00;strokeColor=#005700;" edge="1" parent="1" source="gGdMSuWWBeBKwDiAK09K-24" target="gGdMSuWWBeBKwDiAK09K-21">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="361" y="289" />
+              <mxPoint x="542" y="289" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#008a00;strokeColor=#005700;" edge="1" parent="1" source="gGdMSuWWBeBKwDiAK09K-30">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="634.9523809523807" y="510.0000000000002" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#008a00;strokeColor=#005700;" edge="1" parent="1" source="gGdMSuWWBeBKwDiAK09K-30">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="68.28571428571422" y="510.0000000000002" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#008a00;strokeColor=#005700;" edge="1" parent="1" source="gGdMSuWWBeBKwDiAK09K-30">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360.5" y="708.5238095238094" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-30" value="&lt;font color=&quot;#000000&quot;&gt;app localiza Controllers&lt;br style=&quot;&quot;&gt;Consultar&lt;br style=&quot;&quot;&gt;Alugar&lt;br style=&quot;&quot;&gt;Devolver&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontColor=#ffffff;strokeColor=#000033;" vertex="1" parent="1">
+          <mxGeometry x="286.75" y="462" width="147.5" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#008a00;strokeColor=#005700;" edge="1" parent="1" source="gGdMSuWWBeBKwDiAK09K-34" target="gGdMSuWWBeBKwDiAK09K-21">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-172" y="510" />
+              <mxPoint x="-172" y="-114" />
+              <mxPoint x="593" y="-114" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-34" value="Controller consultar" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="-103" y="497.5" width="171" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-35" value="Controller alugar" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="644" y="497.5" width="171" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#008a00;strokeColor=#005700;" edge="1" parent="1" source="gGdMSuWWBeBKwDiAK09K-36" target="gGdMSuWWBeBKwDiAK09K-21">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="937.3333333333335" y="257" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="964" y="726" />
+              <mxPoint x="964" y="257" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-36" value="Controller devolver" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="275" y="714" width="171" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.7;entryY=0.4;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#008a00;strokeColor=#005700;" edge="1" parent="1" source="gGdMSuWWBeBKwDiAK09K-35" target="gGdMSuWWBeBKwDiAK09K-21">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="729" y="257" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-40" value="&lt;font color=&quot;#000000&quot;&gt;Carros disponiveis&lt;br&gt;Data e hora inicial&lt;br&gt;Data e hora final&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="671" y="523" width="117" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="gGdMSuWWBeBKwDiAK09K-19" value="&lt;font color=&quot;#000000&quot;&gt;Logar usuario/&lt;br&gt;email&amp;nbsp;&lt;br&gt;senha&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="325.5" y="231" width="95" height="55" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
