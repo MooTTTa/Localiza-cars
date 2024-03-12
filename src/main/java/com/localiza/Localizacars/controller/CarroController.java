@@ -1,9 +1,9 @@
 package com.localiza.Localizacars.controller;
 
-import com.localiza.Localizacars.dto.AlterarCorCarroDTO;
-import com.localiza.Localizacars.dto.CarroCadastroResponseDTO;
-import com.localiza.Localizacars.dto.CarroResponseDTO;
-import com.localiza.Localizacars.dto.PlacaDto;
+import com.localiza.Localizacars.dto.carro.AlterarCorCarroDTO;
+import com.localiza.Localizacars.dto.carro.CarroCadastroResponseDTO;
+import com.localiza.Localizacars.dto.carro.CarroResponseDTO;
+import com.localiza.Localizacars.dto.carro.PlacaDto;
 import com.localiza.Localizacars.exception.CarrosErrorException;
 import com.localiza.Localizacars.model.Carro;
 import com.localiza.Localizacars.service.CarroSerive;
@@ -21,11 +21,10 @@ public class CarroController {
     @Autowired
     private CarroSerive service;
 
-    @PostMapping("throw new CarrosErrorException(\"Veiculo com essa placa já cadastrado!\");")
+    @PostMapping("/cadastrar")
     public ResponseEntity<CarroResponseDTO> cadastrarCarro(@RequestBody CarroCadastroResponseDTO carro) throws CarrosErrorException {
         service.cadastarCarro(carro);
-        CarroResponseDTO DTO = new CarroResponseDTO(carro, "Veiculo cadastrado com sucesso!");
-        return new ResponseEntity<>(DTO, HttpStatus.CREATED);
+        return new ResponseEntity<>(new CarroResponseDTO("Veiculo com a placa: (" + carro.placa() + "), cadastrado com sucesso!"), HttpStatus.CREATED);
     }
 
     @GetMapping("/listar")

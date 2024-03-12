@@ -1,7 +1,7 @@
 package com.localiza.Localizacars.service;
 
-import com.localiza.Localizacars.dto.AlterarCorCarroDTO;
-import com.localiza.Localizacars.dto.CarroCadastroResponseDTO;
+import com.localiza.Localizacars.dto.carro.AlterarCorCarroDTO;
+import com.localiza.Localizacars.dto.carro.CarroCadastroResponseDTO;
 import com.localiza.Localizacars.enums.StatusCarro;
 import com.localiza.Localizacars.exception.CarrosErrorException;
 import com.localiza.Localizacars.model.Carro;
@@ -20,17 +20,17 @@ public class CarroSerive {
 
     public void cadastarCarro(CarroCadastroResponseDTO carro) throws CarrosErrorException {
 
-        if (repository.existsByPlaca(carro.getPlaca())){
+        if (repository.existsByPlaca(carro.placa())){
             throw new CarrosErrorException("Veiculo com essa placa já cadastrado!");
         }
 
         Carro carro1 = new Carro();
-        carro1.setModelo(carro.getModelo());
-        carro1.setAno(carro.getAno());
-        carro1.setCor(carro.getCor());
-        carro1.setCidade(carro.getCidade());
-        carro1.setProprietario(carro.getProprietario());
-        carro1.setPlaca(carro.getPlaca());
+        carro1.setModelo(carro.modelo());
+        carro1.setAno(carro.ano());
+        carro1.setCor(carro.cor());
+        carro1.setCidade(carro.cidade());
+        carro1.setProprietario(carro.proprietario());
+        carro1.setPlaca(carro.placa());
         carro1.setStatusCarro(StatusCarro.DISPONIVEL);
 
         repository.save(carro1);
@@ -44,10 +44,11 @@ public class CarroSerive {
     }
 
     public Carro findByCar(String placa) throws CarrosErrorException {
-        if (!repository.existsByPlaca(placa)){
+        Carro carro = repository.findByPlaca(placa);
+        if (carro == null){
             throw new CarrosErrorException("Veiculo não encontrado!");
         }
-       return repository.findByPlaca(placa);
+       return carro;
     }
 
     public void removerCarro(String placa) throws CarrosErrorException {
@@ -59,17 +60,18 @@ public class CarroSerive {
     }
 
     public Carro alterarCor(AlterarCorCarroDTO dto) throws CarrosErrorException {
-        if (!repository.existsByPlaca(dto.getPlaca())){
+
+        Carro carro = repository.findByPlaca(dto.placa());
+
+        if (carro == null){
             throw new CarrosErrorException("Veiculo não encontrado!");
         }
 
-        Carro carro = repository.findByPlaca(dto.getPlaca());
-
-        if (Objects.equals(dto.getCor(), carro.getCor())){
+        if (Objects.equals(dto.cor(), carro.getCor())){
             throw new CarrosErrorException("Veiculo já está registrado com está cor!");
         }
 
-        carro.setCor(dto.getCor());
+        carro.setCor(dto.cor());
 
         return repository.save(carro);
     }

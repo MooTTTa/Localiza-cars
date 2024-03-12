@@ -7,7 +7,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.jetbrains.annotations.NotNull;
+import org.hibernate.annotations.JdbcTypeCode;
+
+import java.sql.Types;
+import java.util.UUID;
 
 @Entity
 @Table(name = "carro")
@@ -18,33 +21,15 @@ import org.jetbrains.annotations.NotNull;
 public class Carro {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @JdbcTypeCode(Types.VARCHAR)
+    private UUID id;
 
-    @NotNull
-    @Column(name = "modelo")
     private String modelo;
-    @NotNull
-    @Column(name = "cor")
     private String cor;
-    @NotNull
-    @Column(name = "ano")
     private int ano;
-    @NotNull
-    @Column(name = "cidade")
     private String cidade;
-    @NotNull
-    @Column(name = "proprietario")
     private String proprietario;
-    @NotNull
-    @Column(unique = true, name = "placa")
     private String placa;
-    @NotNull
-    @Column(name = "statusCarro")
     private StatusCarro statusCarro;
-
-//    @ManyToOne
-//    @JoinColumn(name = "client_id")
-//    private Cliente cliente;
 }
