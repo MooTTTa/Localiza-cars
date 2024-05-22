@@ -1,34 +1,32 @@
 package com.localiza.Localizacars.model;
 
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.localiza.Localizacars.enums.StatusCarro;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.JdbcTypeCode;
 
 import java.sql.Types;
-import java.util.Objects;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Table(name = "carro")
+@Table(name = "aluguel")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Carro {
-
+public class Aluguel {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @JdbcTypeCode(Types.VARCHAR)
     private UUID id;
 
-    private String modelo;
-    private String cor;
-    private int ano;
+    private Long cliente;
+    private String carro;
     private String cidade;
-    private String proprietario;
-    private String placa;
-    private StatusCarro statusCarro;
+    private int tempoAluguel;
+    private LocalDateTime dataHoraInicio;
+    private LocalDateTime dataHoraFim;
 }

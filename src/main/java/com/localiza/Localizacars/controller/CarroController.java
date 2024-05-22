@@ -1,9 +1,7 @@
 package com.localiza.Localizacars.controller;
 
-import com.localiza.Localizacars.dto.carro.AlterarCorCarroDTO;
-import com.localiza.Localizacars.dto.carro.CarroCadastroResponseDTO;
-import com.localiza.Localizacars.dto.carro.CarroResponseDTO;
-import com.localiza.Localizacars.dto.carro.PlacaDto;
+import com.localiza.Localizacars.dto.carro.*;
+import com.localiza.Localizacars.enums.StatusCarro;
 import com.localiza.Localizacars.exception.CarrosErrorException;
 import com.localiza.Localizacars.model.Carro;
 import com.localiza.Localizacars.service.CarroSerive;
@@ -22,7 +20,7 @@ public class CarroController {
     private CarroSerive service;
 
     @PostMapping("/cadastrar")
-    public ResponseEntity<CarroResponseDTO> cadastrarCarro(@RequestBody CarroCadastroResponseDTO carro) throws CarrosErrorException {
+    public ResponseEntity<CarroResponseDTO> cadastrarCarro(@RequestBody CarroCadastroRequestDTO carro) throws CarrosErrorException {
         service.cadastarCarro(carro);
         return new ResponseEntity<>(new CarroResponseDTO("Veiculo com a placa: (" + carro.placa() + "), cadastrado com sucesso!"), HttpStatus.CREATED);
     }
@@ -30,6 +28,16 @@ public class CarroController {
     @GetMapping("/listar")
     public List<Carro> buscarCarros() throws CarrosErrorException {
         return service.findAllCars();
+    }
+
+    @GetMapping("/listarDisponivel")
+    public List<Carro> buscarCarrosDisponivel(@RequestBody CarroCadastroRequestDTO statusCarro) throws CarrosErrorException {
+        return service.buscarCarrosAllDisponiveis(statusCarro);
+    }
+
+    @GetMapping("/buscarCarrosNaCidade")
+    public List<Carro> buscarCarrosNaCidade(@RequestBody CarroByCidade cidade) throws CarrosErrorException {
+        return service.findByCarByCity(cidade);
     }
 
     @GetMapping("/buscarCarro")

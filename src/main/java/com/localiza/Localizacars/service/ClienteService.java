@@ -17,13 +17,8 @@ public class ClienteService {
     private ClienteRepository repository;
 
     public Cliente insert(ClienteRequestDto cliente) throws CpfErrorException, EmailErrorException {
-
-        if (repository.existsByCpf(cliente.cpf())) {
-            throw new CpfErrorException("CPF já está sendo utilizado por outro usuário");
-        }
-        if (repository.existsByEmail(cliente.email())) {
-            throw new EmailErrorException("Email já está sendo utilizado por outro usuário");
-        }
+        if (repository.existsByCpf(cliente.cpf())) throw new CpfErrorException("CPF já está sendo utilizado por outro usuário");
+        if (repository.existsByEmail(cliente.email())) throw new EmailErrorException("Email já está sendo utilizado por outro usuário");
 
         Cliente cliente1 = new Cliente();
         cliente1.setCpf(cliente.cpf());
@@ -38,28 +33,18 @@ public class ClienteService {
 
     public void delete(Long cpf) throws CpfErrorException {
         Cliente cliente = repository.findByCpf(cpf);
-
-        if (cliente == null) {
-            throw new CpfErrorException("CPF inexistente!");
-        }
-
+        if (cliente == null) throw new CpfErrorException("CPF inexistente!");
         repository.delete(cliente);
     }
 
     public Cliente findCliente(Long cpf) throws CpfErrorException {
-
         Cliente cliente = repository.findByCpf(cpf);
-
-        if (cliente == null) {
-            throw new CpfErrorException("Cliente inexistente!");
-        }
+        if (cliente == null) throw new CpfErrorException("Cliente inexistente!");
         return cliente;
     }
 
     public List<Cliente> findAllCliente() throws CpfErrorException {
-        if (repository.findAll().isEmpty()) {
-            throw new CpfErrorException("Não existe clientes!");
-        }
+        if (repository.findAll().isEmpty()) throw new CpfErrorException("Não existe clientes!");
         return repository.findAll();
     }
 }
