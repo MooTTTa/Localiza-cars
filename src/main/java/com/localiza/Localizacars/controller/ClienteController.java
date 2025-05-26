@@ -41,4 +41,5 @@ public class ClienteController {
     public List<Cliente> findCliente() throws CpfErrorException {
         return service.findAllCliente();
     }
+    //teste
 }
