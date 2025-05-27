@@ -30,9 +30,9 @@ public class CarroController {
         return service.findAllCars();
     }
 
-    @GetMapping("/listarDisponivel")
-    public List<Carro> buscarCarrosDisponivel(@RequestBody CarroCadastroRequestDTO statusCarro) throws CarrosErrorException {
-        return service.buscarCarrosAllDisponiveis(statusCarro);
+    @GetMapping("/listarCarrosForStatus")
+    public List<Carro> findCarrosForStatus(@RequestBody StatusCarroRequest statusCarro) throws CarrosErrorException {
+        return service.findCarrosForStatus(statusCarro);
     }
 
     @GetMapping("/buscarCarrosNaCidade")
@@ -46,12 +46,14 @@ public class CarroController {
     }
 
     @DeleteMapping("/remover")
-    public void deletarCarro(@RequestBody PlacaDto placa) throws CarrosErrorException {
+    public ResponseEntity<CarroResponseDTO> deletarCarro(@RequestBody PlacaDto placa) throws CarrosErrorException {
          service.removerCarro(placa.placa());
+         return new ResponseEntity<>(new CarroResponseDTO("Veiculo com a placa: (" + placa.placa() + "), removido com sucesso!"), HttpStatus.OK);
     }
 
-    @PatchMapping("/alterarCor")
-    public Carro AlterarCorCarro(@RequestBody AlterarCorCarroDTO dto) throws CarrosErrorException {
-        return service.alterarCor(dto);
+    @PatchMapping("/alterarVeiculo")
+    public ResponseEntity<CarroResponseDTO> AlterarCorCarro(@RequestBody CarroCadastroRequestDTO carroedit) throws CarrosErrorException {
+        service.alterarVeiculo(carroedit);
+        return new ResponseEntity<>(new CarroResponseDTO("Veiculo com a placa: (" + carroedit.placa() + "), foi alterado com sucesso!"), HttpStatus.OK);
     }
 }

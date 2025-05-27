@@ -2,6 +2,7 @@ package com.localiza.Localizacars.controller;
 
 import com.localiza.Localizacars.dto.aluguel.CadastroAluguel;
 import com.localiza.Localizacars.enums.StatusCarro;
+import com.localiza.Localizacars.exception.AluguelErrorException;
 import com.localiza.Localizacars.model.Aluguel;
 import com.localiza.Localizacars.model.Carro;
 import com.localiza.Localizacars.model.Cliente;
@@ -29,12 +30,12 @@ public class AluguelController {
     private AluguelService service;
 
     @PostMapping("/cadastrarAluguel")
-    public Aluguel cadastrarAluguel(@RequestBody CadastroAluguel aluguel){
+    public Aluguel cadastrarAluguel(@RequestBody CadastroAluguel aluguel) throws AluguelErrorException {
        return service.cadastrarAluguel(aluguel);
     }
 
     @GetMapping("/buscarCarrosAlugados")
-    public List<Aluguel> buscarCarrosAlugados(){
-        return service.buscarCarrosAlugados();
+    public List<Aluguel> buscarCarrosAlugados() throws AluguelErrorException {
+        return service.buscarAlugueis();
     }
 }

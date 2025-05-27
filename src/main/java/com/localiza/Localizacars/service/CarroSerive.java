@@ -3,6 +3,7 @@ package com.localiza.Localizacars.service;
 import com.localiza.Localizacars.dto.carro.AlterarCorCarroDTO;
 import com.localiza.Localizacars.dto.carro.CarroByCidade;
 import com.localiza.Localizacars.dto.carro.CarroCadastroRequestDTO;
+import com.localiza.Localizacars.dto.carro.StatusCarroRequest;
 import com.localiza.Localizacars.enums.StatusCarro;
 import com.localiza.Localizacars.exception.CarrosErrorException;
 import com.localiza.Localizacars.model.Aluguel;
@@ -52,13 +53,9 @@ public class CarroSerive {
         return carro;
     }
 
-    public List<Carro> buscarCarrosAllDisponiveis(CarroCadastroRequestDTO statusCarro) throws CarrosErrorException {
-        List<Carro> carrosDisponiveis = new ArrayList<>();
-        for (Carro carro : repository.findAll()){
-            if (carro.getStatusCarro().equals(statusCarro.statusCarro())){
-                carrosDisponiveis.add(carro);
-            }
-        }
+    public List<Carro> findCarrosForStatus(StatusCarroRequest statusCarro) throws CarrosErrorException {
+        List<Carro> carrosDisponiveis = repository.findByStatusCarro(statusCarro.statusCarro());
+        if (carrosDisponiveis.isEmpty()) throw new CarrosErrorException("Não há carros com esse status no momento.");
         return carrosDisponiveis;
     }
 
@@ -74,11 +71,16 @@ public class CarroSerive {
         repository.delete(carro);
     }
 
-    public Carro alterarCor(AlterarCorCarroDTO dto) throws CarrosErrorException {
-        Carro carro = repository.findByPlaca(dto.placa());
+    public void alterarVeiculo(CarroCadastroRequestDTO carroedit) throws CarrosErrorException {
+        Carro carro = repository.findByPlaca(carroedit.placa());
         if (carro == null) throw new CarrosErrorException("Veiculo não encontrado!");
-        if (Objects.equals(dto.cor(), carro.getCor())) throw new CarrosErrorException("Veiculo já está registrado com está cor!");
-        carro.setCor(dto.cor());
-        return repository.save(carro);
+        carro.setModelo(carroedit.modelo());
+        carro.setAno(carroedit.ano());
+        carro.setCor(carroedit.cor());
+        carro.setCidade(carroedit.cidade());
+        carro.setProprietario(carroedit.proprietario());
+        carro.setPlaca(carroedit.placa());
+        carro.setStatusCarro(carro.getStatusCarro());
+        repository.save(carro);
     }
 }
