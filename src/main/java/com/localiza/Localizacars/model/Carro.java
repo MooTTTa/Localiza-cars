@@ -30,5 +30,7 @@ public class Carro {
     private String cidade;
     private String proprietario;
     private String placa;
+
+    @Enumerated(EnumType.STRING)
     private StatusCarro statusCarro;
 }

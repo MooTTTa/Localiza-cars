@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 @JsonFormat(shape = JsonFormat.Shape.STRING)
 @JsonDeserialize(using = StatusCarroDeserializer.class)
-public enum StatusCarro {
-    ALUGADO,
-    DISPONIVEL;
+public enum StatusAluguel {
+    ATIVO,
+    FINALIZADO;
 }
