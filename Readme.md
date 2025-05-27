@@ -164,6 +164,8 @@ spring.flyway.baseline-on-migrate=true
 - Dashboard administrativo (ex: React, Vue)
 - Histórico de aluguel por cliente
 - Notificações por e-mail de vencimento de aluguel
+- Exportar relatorio de alugueis em xls
+- testes unitarios
 
 ---
 
